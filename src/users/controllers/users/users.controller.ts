@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req, Res } from '@nestjs/common';
 import { Request,Response } from 'express';
 import { CreateUserDto } from 'src/users/dtos/createuser.dtos';
 
@@ -12,7 +12,7 @@ export class UsersController {
         };
 
     }
-    
+     /*
 
     @Get('post')
     getUserspost()
@@ -35,7 +35,7 @@ export class UsersController {
         };
 
     }
-    /*
+    
     @Post()
     createUser(@Req() request:Request,@Res() response:Response){
         console.log(
@@ -50,6 +50,16 @@ export class UsersController {
         return{};
     }
 
+//parameter@Parm
+    @Get(':id')
+    getUserByid(@Param('id') id:string ){
+    console.log(id);
+    return{id};
+
     }
+
+
+    }
+
 
 
